@@ -1,84 +1,46 @@
+# Cohort Retention Analysis on Online Retail Dataset
 
-# Cohort Retention Analysis
+## Project Overview
+This project aims to perform Cohort Retention Analysis on an online retail dataset to track user behavior and identify key trends in customer retention over time.  
+By analyzing user cohorts based on their first purchase date, the project visualizes retention patterns, allowing businesses to understand how different customer segments behave after their first interaction with the platform.
 
-## Overview
-
-This project performs a cohort retention analysis on the **Online Retail** dataset. The analysis aims to track customer retention over time based on their first purchase (cohort) and the frequency of their subsequent orders. The output is visualized as a **Cohort Retention Heatmap** in **Tableau**, which provides insights into customer behavior and helps in understanding retention trends.
+Using SQL, the analysis filters and cleanses the dataset, performs cohort grouping, and calculates the retention rates for different cohorts.  
+Tableau is used to visualize these insights in an interactive heatmap for easy interpretation.
 
 ## Project Structure
+The project is organized as follows:
 
-- **SQL Queries**: 
-  - **`cleaned_online_retail_data_view`**: Prepares the dataset by cleaning missing or invalid data and filtering out irrelevant records.
-  - **Cohort Analysis**: Identifies customer cohorts based on their first purchase date and tracks retention across periods (monthly).
-  - **Pivot Table**: The final cohort retention table is generated and ready for visualization.
+1. **Data Cleaning**: A set of SQL queries to clean and preprocess the raw dataset.
+2. **Cohort Retention Calculation**: SQL queries to create cohort groups, track user activity, and calculate retention metrics.
+3. **Data Visualization**: Tableau is used to create an interactive heatmap that visualizes the retention rates of different customer cohorts.
+4. **Insights and Conclusions**: A summary of the key insights derived from the cohort analysis.
 
-- **Excel Table**: 
-  - A cleaned version of the cohort retention data exported from SQL. This file can be imported into Tableau to create the heatmap.
+## Tableau Visualization
+You can explore the interactive Cohort Retention Heatmap created in Tableau at the following link:  
+[Cohort Retention Analysis - Tableau Public](https://public.tableau.com/app/profile/ayush.singh3840/viz/CohortRetentionAnalysis_16878105860820/Dashboard1)
 
-- **Tableau Visualization**:
-  - A **Cohort Retention Heatmap** in Tableau that visualizes customer retention over time by cohort period.
+## Data Cleaning Process
 
-## Steps to Reproduce
+1. **Remove Irrelevant Data**: Excluded rows that didn’t align with the business objective, like transactions without key details.
+2. **Handle Missing Data**: Replaced missing Description values with 'Unknown' and removed rows with missing or zero CustomerID, Quantity, or UnitPrice.
+3. **Remove Duplicates**: Used ROW_NUMBER() to eliminate duplicate transaction entries.
+4. **Fix Structural Errors**: Corrected inconsistencies like typos, wrong capitalization, and naming issues.
+5. **Convert Data Types**: Ensured correct types (e.g., Quantity as integer, InvoiceDate as DATETIME).
+6. **Standardize/Normalize Data**: Made sure units and scales (e.g., price format, quantity) were consistent.
+7. **Dealing with Outliers**: Removed outliers using the IQR method or investigated their cause.
+8. **Validate Data**: Conducted final checks to ensure data consistency and completeness.
 
-### 1. SQL Queries (Cohort Calculation)
+## Cohort Retention Calculation Process
 
-The SQL queries are designed to:
-- Clean the data by removing invalid records and handling missing values.
-- Group customers by their first purchase date (cohort).
-- Calculate the retention for each cohort over the months following their first purchase.
+1. **Create Cohorts**: Grouped customers based on the month and year of their first purchase to define each cohort.
+2. **Track User Activity**: Joined cohort data with transaction details to track each customer's activity within their cohort, identifying the year and month of each order.
+3. **Calculate Cohort Index**: Calculated the number of months since a customer's first purchase to create a cohort index representing their time in the cohort.
+4. **Calculate Retention**: Pivoted cohort data to calculate retention rates for each cohort period, showing how many users from the original cohort made subsequent purchases.
 
-The SQL script contains the following parts:
-- **Cleaned Data View**: Filters and formats the raw data.
-- **Cohort Grouping**: Creates cohort groups based on the first purchase date.
-- **User Activity**: Tracks customer activity over time.
-- **Cohort Index**: Generates a cohort period index representing months since the first purchase.
-- **Cohort Table**: Prepares the data for pivoting and final output.
+## Key Insights & Findings
+This section will summarize the key findings and trends from the Cohort Retention Analysis. These insights can provide valuable information on user behavior, customer retention, and potential strategies for improving engagement. Below are some areas to explore:
 
-### 2. Export Data to Excel
-
-After executing the SQL queries, the cohort data is exported to an Excel table. This table can be imported into Tableau for visualization. The Excel file contains:
-- **CustomerID**: Unique identifier for each customer.
-- **Cohort Date**: The month and year of the customer's first purchase.
-- **Cohort Period**: The number of months since the first purchase (cohort period index).
-- **Retention Count**: The number of customers who made subsequent purchases in each cohort period.
-
-### 3. Tableau Visualization
-
-The exported Excel table is used to create a **Cohort Retention Heatmap** in Tableau:
-- **Rows**: Cohort Date (Month/Year of First Purchase)
-- **Columns**: Cohort Period (Months since First Purchase)
-- **Color**: Retention Count (Number of customers retained in each period)
-
-### 4. Interpretation
-
-The heatmap allows you to visually analyze customer retention patterns. High retention periods are represented by darker shades, and periods with significant drop-offs can be identified with lighter colors.
-
-## How to Use
-
-1. Clone or download this repository.
-2. Run the SQL queries on your SQL Server to create the necessary views and tables.
-3. Export the resulting cohort data to an Excel file.
-4. Open Tableau and import the Excel file to create the cohort retention heatmap.
-5. Analyze the heatmap to understand customer retention behavior over time.
-
-## Prerequisites
-
-- **SQL Server**: For executing the SQL queries.
-- **Tableau**: For data visualization and heatmap creation.
-- **Excel**: For exporting and formatting the cohort data.
-
-## SQL Code Example
-
-```sql
--- Example of creating the cohort group view
-CREATE VIEW cohort_group_view AS
-    SELECT
-        [CustomerID],
-        MIN([InvoiceDate]) AS first_purchase_date,
-        DATEPART(YEAR, MIN([InvoiceDate])) AS cohort_year,
-        DATEPART(MONTH, MIN([InvoiceDate])) AS cohort_month
-    FROM
-        cleaned_online_retail_data_view
-    GROUP BY
-        [CustomerID];
-GO
+- **Retention Trends**: Insights into how retention rates vary across different customer cohorts and over time.
+- **High-Performing Cohorts**: Identify which cohorts (based on their first purchase month/year) have the highest retention and what factors may contribute to this.
+- **Drop-off Points**: Pinpoint when users are most likely to disengage with the platform and potential opportunities to improve retention.
+- **Segmentation Insights**: Possible patterns in customer behavior based on segmentation, such as customer demographics, order frequency, or product types.
