@@ -38,7 +38,7 @@ You can explore the interactive Cohort Retention Heatmap created in Tableau at t
 4. **Calculate Retention**: Pivoted cohort data to calculate retention rates for each cohort period, showing how many users from the original cohort made subsequent purchases.
 
 ## Key Insights & Findings
-This section will summarize the key findings and trends from the Cohort Retention Analysis. These insights can provide valuable information on user behavior, customer retention, and potential strategies for improving engagement. Below are some areas to explore:
+This section summarizes the key findings and trends from the Cohort Retention Analysis.
 
 - **Retention Trends**: Retention drops sharply after Month 1, most cohorts lose 60–80% of users by Month 2.
 - **High-Performing Cohorts**: 2010-12-01 cohort performs best, maintaining 50% retention by Month 12, far exceeding other cohorts.
