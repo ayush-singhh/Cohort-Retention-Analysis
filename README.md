@@ -40,7 +40,9 @@ You can explore the interactive Cohort Retention Heatmap created in Tableau at t
 ## Key Insights & Findings
 This section will summarize the key findings and trends from the Cohort Retention Analysis. These insights can provide valuable information on user behavior, customer retention, and potential strategies for improving engagement. Below are some areas to explore:
 
-- **Retention Trends**: Insights into how retention rates vary across different customer cohorts and over time.
-- **High-Performing Cohorts**: Identify which cohorts (based on their first purchase month/year) have the highest retention and what factors may contribute to this.
-- **Drop-off Points**: Pinpoint when users are most likely to disengage with the platform and potential opportunities to improve retention.
-- **Segmentation Insights**: Possible patterns in customer behavior based on segmentation, such as customer demographics, order frequency, or product types.
+- **Retention Trends**: Retention drops sharply after Month 1, most cohorts lose 60–80% of users by Month 2.
+- **High-Performing Cohorts**: 2010-12-01 cohort performs best, maintaining 50% retention by Month 12, far exceeding other cohorts.
+- **Drop-off Points**: Later cohorts show weaker retention, Post-2011-07-01 cohorts often fall below 10% by Month 6.
+
+- **Improvement Suggestionss**: 1. Improving Months 1–3 engagement is key to reducing churn and driving long-term growth. 2. Analyzing why 2010-12-01 performed well can guide future strategies.
+
