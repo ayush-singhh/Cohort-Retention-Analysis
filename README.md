@@ -5,19 +5,23 @@ This project aims to perform Cohort Retention Analysis on an online retail datas
 By analyzing user cohorts based on their first purchase date, the project visualizes retention patterns, allowing businesses to understand how different customer segments behave after their first interaction with the platform.
 
 Using SQL, the analysis filters and cleanses the dataset, performs cohort grouping, and calculates the retention rates for different cohorts.  
-Tableau is used to visualize these insights in an interactive heatmap for easy interpretation.
+Power BI and Tableau are used to visualize these insights in an interactive heatmap for easy interpretation.
 
 ## Project Structure
 The project is organized as follows:
 
 1. **Data Cleaning**: A set of SQL queries to clean and preprocess the raw dataset.
 2. **Cohort Retention Calculation**: SQL queries to create cohort groups, track user activity, and calculate retention metrics.
-3. **Data Visualization**: Tableau is used to create an interactive heatmap that visualizes the retention rates of different customer cohorts.
+3. **Data Visualization**: Power BI and Tableau are used to create an interactive heatmap that visualizes the retention rates of different customer cohorts.
 4. **Insights and Conclusions**: A summary of the key insights derived from the cohort analysis.
 
 ## Tableau Visualization
-You can explore the interactive Cohort Retention Heatmap created in Tableau at the following link:  
+You can explore the interactive Cohort Retention Heatmap created in Power BI and Tableau at the following links:  
+[Cohort Retention Analysis - Power BI Report File](https://studentmesacin-my.sharepoint.com/:u:/g/personal/ayushfm19_student_mes_ac_in/EaR1Kd2nNm9EpLFC2qywYIABfXgIApeM68lLnHBDavu3kA?e=CZLFHY)
+
 [Cohort Retention Analysis - Tableau Public](https://public.tableau.com/app/profile/ayush.singh3840/viz/CohortRetentionAnalysis_16878105860820/Dashboard1)
+
+
 
 ## Data Cleaning Process
 
