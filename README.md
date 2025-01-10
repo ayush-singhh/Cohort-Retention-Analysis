@@ -23,6 +23,7 @@ You can explore the interactive Cohort Retention Heatmap created in Power BI and
 
 
 
+
 ## Data Cleaning Process
 
 1. **Remove Irrelevant Data**: Excluded rows that didn’t align with the business objective, like transactions without key details.
